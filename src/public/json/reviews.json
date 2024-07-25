@@ -1,0 +1,39 @@
+{
+  "reviews": [
+    {
+      "user_id": 1,
+      "external_id": "The Matrix",
+      "review_text": "A groundbreaking sci-fi film that questions reality and features stunning action sequences.",
+      "rating": 9,
+      "like": true
+    },
+    {
+      "user_id": 2,
+      "external_id": "Inception",
+      "review_text": "A mind-bending thriller with an intricate plot and outstanding visual effects.",
+      "rating": 8.5,
+      "like": true
+    },
+    {
+      "user_id": 3,
+      "external_id": "The Godfather",
+      "review_text": "An epic tale of a powerful mafia family, superbly acted and beautifully directed.",
+      "rating": 10,
+      "like": true
+    },
+    {
+      "user_id": 4,
+      "external_id": "Superbad",
+      "review_text": "A hilarious and relatable coming-of-age comedy with memorable characters.",
+      "rating": 7,
+      "like": true
+    },
+    {
+      "user_id": 5,
+      "external_id": "Casablanca",
+      "review_text": "A timeless classic with a compelling love story set against the backdrop of WWII.",
+      "rating": 9.5,
+      "like": false
+    }
+  ]
+}

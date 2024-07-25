@@ -1,0 +1,68 @@
+{
+  "lists": [
+    {
+      "list_id": 1,
+      "user_id": 1,
+      "list_name": "Favorite Sci-Fi Movies",
+      "movies": [
+        {
+          "id": 974262,
+          "title": "Descendants: The Rise of Red",
+          "poster_path": "/8fYluTtB3b3HKO7KQa5tzrvGaps.jpg"
+        },
+        {
+          "id": 974262,
+          "title": "Descendants: The Rise of Red",
+          "poster_path": "/8fYluTtB3b3HKO7KQa5tzrvGaps.jpg"
+        },
+        {
+          "id": 974262,
+          "title": "Descendants: The Rise of Red",
+          "poster_path": "/8fYluTtB3b3HKO7KQa5tzrvGaps.jpg"
+        },
+        {
+          "id": 974262,
+          "title": "Descendants: The Rise of Red",
+          "poster_path": "/8fYluTtB3b3HKO7KQa5tzrvGaps.jpg"
+        },
+        {
+          "id": 974262,
+          "title": "Descendants: The Rise of Red",
+          "poster_path": "/8fYluTtB3b3HKO7KQa5tzrvGaps.jpg"
+        },
+        {
+          "id": 974262,
+          "title": "Descendants: The Rise of Red",
+          "poster_path": "/8fYluTtB3b3HKO7KQa5tzrvGaps.jpg"
+        },
+        {
+          "id": 974262,
+          "title": "Descendants: The Rise of Red",
+          "poster_path": "/8fYluTtB3b3HKO7KQa5tzrvGaps.jpg"
+        },
+        {
+          "id": 974262,
+          "title": "Descendants: The Rise of Red",
+          "poster_path": "/8fYluTtB3b3HKO7KQa5tzrvGaps.jpg"
+        }
+      ]
+    },
+    {
+      "list_id": 2,
+      "user_id": 1,
+      "list_name": "Favorite Sci-Fi Movies 2",
+      "movies": [
+        {
+          "id": 974262,
+          "title": "Descendants: The Rise of Red",
+          "poster_path": "/8fYluTtB3b3HKO7KQa5tzrvGaps.jpg"
+        },
+        {
+          "id": 974262,
+          "title": "Descendants: The Rise of Red",
+          "poster_path": "/8fYluTtB3b3HKO7KQa5tzrvGaps.jpg"
+        }
+      ]
+    }
+  ]
+}
