@@ -78,4 +78,64 @@ app.post('/reviews/add', (req, res) => {
   });
 });
 
+
+app.get('/user/account', (req, res) => {
+  res.sendFile(path.join(__dirname, "../src/user/index.html"));
+}
+);
+
+app.get('/data/reviews', (req, res) => {
+  fs.readFile(path.join(__dirname, '../src/public/json/reviews.json'), 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+      res.status(500).json({ message: 'Failed to read data.' });
+    } else {
+      res.status(200).json(JSON.parse(data));
+    }
+  });
+}
+);
+
+app.get('/data/users', (req, res) => {
+  fs.readFile(path.join(__dirname, '../src/public/json/users.json'), 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+      res.status(500).json({ message: 'Failed to read data.' });
+    } else {
+      console.log(data);
+      res.status(200).json(JSON.parse(data));
+    }
+  });
+});
+
+
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, "../src/account/login.html"));
+}
+);
+
+app.post('/login', (req, res) => {
+  const { email, password } = req.body
+
+  fs.readFile(path.join(__dirname, '../src/public/json/users.json'), 'utf8', (err, data) => {
+
+    if (err) {
+      console.error(err);
+      res.status(500).json({ message: 'Failed to read data.' });
+    }
+
+    const users = JSON.parse(data);
+    const user = users.find(user => user.email === email && user.password === password);
+
+    if (user) {
+      res.status(200).json({ message: 'Login successful!', user });
+    }
+    else {
+      res.status(401).json({ message: 'Invalid email or password.' });
+    }
+  }
+  );
+}
+);
+
 server.listen(port, () => console.log(`Server running on port ${port}`));
