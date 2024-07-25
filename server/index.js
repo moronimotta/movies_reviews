@@ -105,6 +105,11 @@ app.get('/login', (req, res) => {
 }
 );
 
+app.get('/movies/popular', (req, res) => {
+  res.sendFile(path.join(__dirname, "../src/movies/popular.html"));
+}
+);
+
 app.post('/login', (req, res) => {
   const { email, password } = req.body
 

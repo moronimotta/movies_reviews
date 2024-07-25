@@ -1,30 +1,42 @@
-import MovieCard from "./MovieCard.mjs";
+import MovieCard from "./movieCard.mjs";
 
 export default class List {
     constructor(user_id) {
         this.user_id = user_id;
+        this.lists = [];
+        this.userLists = [];
     }
 
-    async addMovieToList(list_id, movie_id, title, poster_path) {
+
+    async getAllListsFromUser() {
+        await fetch('/data/lists', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(response => response.json())
+            .then(data => {
+                const userLists = data.lists.filter(list => list.user_id === this.user_id);
+                this.lists = data;
+                this.userLists = userLists;
+            })
+    }
+
+    async createList(list_name) {
         try {
             const response = await fetch('../json/lists.json');
             const data = await response.json();
 
-            const list = data.lists.find(l => l.user_id === this.user_id && l.list_id === list_id);
-            if (!list) {
-                console.error('List not found for the given user_id and list_id');
-                return;
-            }
-
-            const newMovie = {
-                id: movie_id,
-                title: title,
-                poster_path: poster_path
+            const newList = {
+                user_id: this.user_id,
+                list_id: data.lists.length + 1,
+                list_name: list_name,
+                movies: []
             };
 
-            list.movies.push(newMovie);
+            data.lists.push(newList);
 
-            await fetch('http://localhost:3000/movies/list/add', {
+            await fetch('/movies/list/create', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -32,7 +44,49 @@ export default class List {
                 body: JSON.stringify(data),
             });
 
-            console.log('Movie added successfully');
+            alert('List created successfully');
+        } catch (error) {
+            console.error('Error creating list:', error);
+        }
+    }
+
+    async addMovieToList(list_id, movie) {
+        try {
+            const response = await fetch('../json/lists.json');
+            const data = await response.json();
+
+            const newMovie = {
+                id: movie.id,
+                title: movie.title,
+                poster_path: movie.poster_path
+            };
+          
+            let movieAlreadyAdded = false;
+            data.lists.forEach(list => {
+                if (list.user_id === this.user_id && list.list_id === parseInt(list_id)) {
+                    const movieExists = list.movies.find(m => m.id === newMovie.id);
+                    if (movieExists) {
+                        movieAlreadyAdded = true;
+                        alert('Movie already exists in the list ' + list.list_name);
+                        return;
+                    }
+                    list.movies.push(newMovie);
+                }
+            });
+
+            if (movieAlreadyAdded) {
+                return;
+            }
+
+        
+            await fetch('/movies/list/add', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+            alert('Movie added successfully');
         } catch (error) {
             console.error('Error adding movie to list:', error);
         }
@@ -68,6 +122,24 @@ export default class List {
                 console.log('Movie removed successfully');
             })
             .catch(error => console.error('Error removing movie from list:', error));
+    }
+
+    async buildListModal() {
+        await this.getAllListsFromUser()
+            .then(() => {
+                this.userLists.forEach(list => {
+                    const listDiv = document.createElement('div');
+                    listDiv.className = 'form-check';
+                    listDiv.innerHTML = `
+                    <input class="form-check-input" type="checkbox" name="list" id="list${list.list_id}" value="${list.list_id}">
+                    <label class="form-check-label" for="list${list.list_id}">
+                        ${list.list_name}
+                    </label>
+                `;
+                    document.getElementById('listModalBody').appendChild(listDiv);
+
+                });
+            })
     }
 
     async buildListView(user_id, list_id = '') {

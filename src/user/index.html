@@ -1,43 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Reviews - Account</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
+<script src="/js/account_page.js" type="module"></script>
+<script src="/js/searchbar.js" type="module"></script>
+
 <body>
     <header>
-        <div class="logo">LOGO</div>
-        <input type="text" placeholder="Search for Titles" class="search-bar">
-        <div class="account">Account</div>
+        <div class="account">
+            <a href="/">LOGO</a>
+        </div>
+        <div class="account">
+            <a href="/user/account">Account</a>
+        </div>
+        
     </header>
-    
+
     <nav>
         <ul>
-            <li>Popular</li>
-            <li>Upcoming Movies</li>
-            <li>Random Movie</li>
-            <li>Profile</li>
+            <li>
+                <a href="/movies/popular">Popular</a>
+            </li>
+            <li>
+                <a href="/">Upcoming Movies</a>
+            </li>
         </ul>
     </nav>
-    
+
     <main>
-        <section class="movies">
-            <div>Movie 1</div>
-            <div>Movie 2</div>
-            <div>Movie 3</div>
-        </section>
-        <section class="favorites">
-            <h2>Favorites</h2>
-            <div>Favorites List</div>
-        </section>
-        <section class="lists">
-            <h2>Lists</h2>
-            <div>List 1</div>
-            <div>List 2</div>
-            <div>List 3</div>
-        </section>
+        <section id="user-info"></section>
+        <section id="lists"></section>
+        <section id="reviews"></section>
     </main>
-    
+
     <footer>Footer</footer>

@@ -22,5 +22,4 @@ export default class MovieCard {
         return movieCard;
     }
 
-
 }

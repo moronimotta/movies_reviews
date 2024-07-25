@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Reviews - Lists</title>
+    <title>Movie Reviews - Home</title>
     <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/lists.js" type="module"></script>
+    <script src="/js/movie_popular.js" type="module"></script>
 </head>
+
 <body>
     <header>
-        <div class="account">
-            <a href="/">LOGO</a>
+        <div class="logo">
+            <a href="#">LOGO</a>
         </div>
-                <div class="account">
+        <div class="account">
             <a href="/user/account">Account</a>
         </div>
     </header>
-    
+
     <nav>
         <ul>
             <li>
@@ -25,15 +27,24 @@
             <li>
                 <a href="/">Upcoming Movies</a>
             </li>
-            
+
         </ul>
     </nav>
-    
+
     <main>
-        <section id="lists">
+        <section class="random-quote">
+            <p id="quote"></p>
+        </section>
+        <section class="popular-movies">
+            <h2>Popular this week:</h2>
+            <div id="movie-container">
+            </div>
         </section>
     </main>
-    
-    <footer>Footer</footer>
+
+    <footer>
+        <p>Footer</p>
+    </footer>
 </body>
+
 </html>

@@ -5,36 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Reviews - Sign In</title>
     <link rel="stylesheet" href="../css/style.css">
+    <script src="/js/login.js" type="module"></script>
+
 </head>
 <body>
     <header>
-        <div class="logo">LOGO</div>
-        <input type="text" placeholder="Search for Titles" class="search-bar">
-        <div class="account">Account</div>
+        <div class="account">
+            <a href="/">LOGO</a>
+        </div>
+                <div class="account">
+            <a href="/user/account">Account</a>
+        </div>
     </header>
     
     <nav>
         <ul>
-            <li>Popular</li>
-            <li>Upcoming Movies</li>
-            <li>Random Movie</li>
+            <li>
+                <a href="/movies/popular">Popular</a>
+            </li>
+            <li>
+                <a href="/">Upcoming Movies</a>
+            </li>
+            
         </ul>
     </nav>
     
     <main>
         <section class="sign-in">
             <h1>Sign In</h1>
-            <form>
-                <label for="username">User Name</label>
-                <input type="text" id="username" placeholder="johndoe">
+            <form id="loginForm">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="example@gmail.com">
+
                 
                 <label for="password">Password</label>
                 <input type="password" id="password" placeholder="********">
                 
                 <button type="submit">Sign In</button>
                 
-                <a href="#">Forgot Password?</a>
-                <a href="CreateAccount.html">New User? SIGN UP</a>
+                <a href="/account/create">New User? SIGN UP</a>
             </form>
         </section>
     </main>

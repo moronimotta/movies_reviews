@@ -1,41 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Reviews - Movie Details</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
     <script src="/js/movie_details.js" type="module"></script>
 
 </head>
+
 <body>
     <header>
         <div class="logo">
             <a href="./../index.html">LOGO</a>
         </div>
-        <input type="text" placeholder="Search for Titles" class="search-bar">
-        <div class="account">Account</div>
+                <div class="account">
+            <a href="/user/account">Account</a>
+        </div>
     </header>
-    
+
     <nav>
         <ul>
-            <li>Popular</li>
-            <li>Upcoming Movies</li>
-            <li>Random Movie</li>
+            <li>
+                <a href="/movies/popular">Popular</a>
+            </li>
+            <li>
+                <a href="/">Upcoming Movies</a>
+            </li>
+
         </ul>
     </nav>
-    
+
     <main>
         <section class="movie-details">
             <h1 id="movie-name">Movie Name: </h1>
             <div id="movie-poster">
-            <p id="description">Description/Info: </p>
+                <p id="description">Description/Info: </p>
+                <p id="likes">Likes: </p>
+
+
         </section>
-        <button>Watched</button>
-        <button>Add to List</button>
-        <button>Add Review</button>
+        <section id="actions">
+            <button id="new-review" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#reviewModal">
+                Submit Review
+            </button>
+            <button id="add-to-list" type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                data-bs-target="#listModal">
+                Add to List
+            </button>
+        </section>
+        <section id="reviews">
+            <h1>Reviews: </h1>
+
+        </section>
+
+
+
+
+        <!-- Modal Review -->
+        <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="reviewModalLabel">Submit Your Review</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="reviewForm">
+                            <div class="mb-3">
+                                <label for="reviewText" class="form-label">Review Text</label>
+                                <textarea class="form-control" id="reviewText" rows="3" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="reviewRating" class="form-label">Rating</label>
+                                <input type="number" class="form-control" id="reviewRating" min="1" max="10" required>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="reviewLike">
+                                <label class="form-check-label" for="reviewLike">Like</label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button id="submit-review" type="button" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Add to List -->
+        <div class="modal fade" id="listModal" tabindex="-1" aria-labelledby="addToListModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addToListModalLabel">Add to List</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="listModalBody">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button id="submit-list" type="button" class="btn btn-primary">Add to List</button>
+                        <button id="create-list" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#createNewList">Create List</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="createNewList" tabindex="-1" aria-labelledby="addToListModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addToListModalLabel">Add to List</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="addToListForm">
+                            <div class="mb-3">
+                                <label for="listName" class="form-label">List Name</label>
+                                <input type="text" class="form-control" id="listName" required>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button id="submit-new-list" type="button" class="btn btn-primary">Create New List</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
     </main>
-    
+
     <footer>Footer</footer>
+
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 </body>
+
 </html>

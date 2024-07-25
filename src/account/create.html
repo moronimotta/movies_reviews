@@ -4,20 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Reviews - Create Account</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <script src="/js/account_form.js" type="module"></script>
+    <link rel="stylesheet" href="/css/style.css">
+
 </head>
 <body>
     <header>
-        <div class="logo">LOGO</div>
-        <input type="text" placeholder="Search for Titles" class="search-bar">
-        <div class="account">Account</div>
+        <div class="account">
+            <a href="/">LOGO</a>
+        </div>
+                <div class="account">
+            <a href="/user/account">Account</a>
+        </div>
     </header>
     
     <nav>
         <ul>
-            <li>Popular</li>
-            <li>Upcoming Movies</li>
-            <li>Random Movie</li>
+            <li>
+                <a href="/movies/popular">Popular</a>
+            </li>
+            <li>
+                <a href="/">Upcoming Movies</a>
+            </li>
+            
         </ul>
     </nav>
     
@@ -40,7 +49,7 @@
                 <label for="username">Username</label>
                 <input type="text" id="username" placeholder="Username">
                 
-                <button type="submit">Create</button>
+                <button id="account-form-button" type="submit">Create</button>
             </form>
         </section>
     </main>

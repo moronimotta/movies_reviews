@@ -1,39 +1,72 @@
 import { getLocalStorage, setLocalStorage } from './utils.mjs';
+import List from './List.mjs';
 
 export default class Account {
     constructor() {
         this.users = [];
+        this.user = [];
     }
 
-    init() {
-        fetch('../json/users.json')
-            .then(response => response.json())
+    async init() {
+        await fetch('/data/users', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(response => response.json())
             .then(data => {
                 this.users = data;
-            });
+            })
+
+    }
+    getAllAccountData() {
+        const user = getLocalStorage('currentUserInfo');
+        this.buildUserInfo(user);
+
+        const lists = new List();
+        lists.buildListView(user.id);
     }
 
-    // Create account method
-    createAccount(name, email, password) {
+    buildUserInfo(user) {
+        const userInfo = document.getElementById('user-info');
+        const h1 = document.createElement('h1');
+        h1.textContent = "Name: " + user.name;
+        userInfo.appendChild(h1);
 
-       if (this.users.find(user => user.email === email)) {
+        const p1 = document.createElement('p');
+        p1.textContent = "Email: " + user.email;
+        userInfo.appendChild(p1);
+
+        const p2 = document.createElement('p');
+        p2.textContent = "Username: " + user.username;
+        userInfo.appendChild(p2);
+
+
+        
+    }
+
+
+    createAccount(name, email, password, username) {
+
+        if (this.users.find(user => user.email === email)) {
             throw new Error('Email already in use.');
         }
+        if (this.users.find(user => user.username === username)) {
+            throw new Error('Username already in use.');
+        }
 
-        // Create new user
         const newUser = {
-            id: users.length + 1, // Simple ID generation, consider more robust solutions
+            id: this.users.length + 1,
             name,
             email,
-            password // Note: In production, never store passwords as plain text
+            password,
+            username
         };
 
-        users.push(newUser);
-        setLocalStorage('currentUser', newUser);
-        return newUser;
+        this.user.push(newUser);
+        this.users.push(newUser);
     }
 
-    // Login method
     login(email, password) {
         const user = this.users.find(user => user.email === email && user.password === password);
         if (!user) {
@@ -41,13 +74,13 @@ export default class Account {
         }
 
         this.user = user;
-        setLocalStorage('currentUser', user); // Save user info to local storage
+        setLocalStorage('currentUser', user);
         return user;
     }
 
-    // Logout method
+
     logout() {
-        setLocalStorage('currentUser', null); // Remove user info from local storage
+        setLocalStorage('currentUser', null);
     }
 
     isLoggedIn() {

@@ -1,4 +1,4 @@
-const apiKey = ''; // Replace with your actual API key
+const apiKey = ''; 
 const jsonBaseUrl = '../json/';
 
 export function qs(selector, parent = document) {
