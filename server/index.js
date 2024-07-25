@@ -84,29 +84,6 @@ app.get('/user/account', (req, res) => {
 }
 );
 
-app.get('/data/reviews', (req, res) => {
-  fs.readFile(path.join(__dirname, '../src/public/json/reviews.json'), 'utf8', (err, data) => {
-    if (err) {
-      console.error(err);
-      res.status(500).json({ message: 'Failed to read data.' });
-    } else {
-      res.status(200).json(JSON.parse(data));
-    }
-  });
-}
-);
-
-app.get('/data/users', (req, res) => {
-  fs.readFile(path.join(__dirname, '../src/public/json/users.json'), 'utf8', (err, data) => {
-    if (err) {
-      console.error(err);
-      res.status(500).json({ message: 'Failed to read data.' });
-    } else {
-      console.log(data);
-      res.status(200).json(JSON.parse(data));
-    }
-  });
-});
 
 
 app.get('/login', (req, res) => {
@@ -137,5 +114,33 @@ app.post('/login', (req, res) => {
   );
 }
 );
+
+
+// Get function to get data:
+app.get('/data/reviews', (req, res) => {
+  fs.readFile(path.join(__dirname, '../src/public/json/reviews.json'), 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+      res.status(500).json({ message: 'Failed to read data.' });
+    } else {
+      res.status(200).json(JSON.parse(data));
+    }
+  });
+}
+);
+
+app.get('/data/users', (req, res) => {
+  fs.readFile(path.join(__dirname, '../src/public/json/users.json'), 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+      res.status(500).json({ message: 'Failed to read data.' });
+    } else {
+      console.log(data);
+      res.status(200).json(JSON.parse(data));
+    }
+  });
+});
+
+
 
 server.listen(port, () => console.log(`Server running on port ${port}`));
