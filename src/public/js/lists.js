@@ -15,7 +15,7 @@ if (!list_id) {
     list.buildListView(user_id, list_id);
 }
 
-// list.buildListView(1)
+list.buildListView(1)
 
 
 
