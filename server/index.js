@@ -38,15 +38,29 @@ app.get("/movies/list", (req, res) => {
 });
 
 app.post('/movies/list/add', (req, res) => {
-  const data = req.body
-
-  fs.writeFile("../public/json/lists.json", JSON.stringify(data), (err) => {
-    if (err) {
-      console.log(err);
+  const body = req.body
+ 
+    fs.writeFile("../src/public/json/lists.json", JSON.stringify(body), (err) => {
+      if (err) {
+        console.log(err);
+      }
+      res.status(200).json({ message: "Movie added successfully" });
     }
+    );
   }
-  );
-});
+);
+app.post('/movies/list/create', (req, res) => {
+  const body = req.body
+ 
+    fs.writeFile("../src/public/json/lists.json", JSON.stringify(body), (err) => {
+      if (err) {
+        console.log(err);
+      }
+      res.status(200).json({ message: "Movie added successfully" });
+    }
+    );
+  }
+);
 
 
 app.get('/account/create', (req, res) => {
@@ -141,6 +155,18 @@ app.get('/data/users', (req, res) => {
   });
 });
 
+
+app.get('/data/lists', (req, res) => {
+  fs.readFile(path.join(__dirname, '../src/public/json/lists.json'), 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+      res.status(500).json({ message: 'Failed to read data.' });
+    } else {
+      res.status(200).json(JSON.parse(data));
+    }
+  });
+}
+);
 
 
 server.listen(port, () => console.log(`Server running on port ${port}`));
