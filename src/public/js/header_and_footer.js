@@ -1,7 +1,6 @@
 
 import { createLoginButton, getLocalStorage, getRandomQuote, createAccountActionsButton } from "./utils.mjs";
 
-
 document.addEventListener("DOMContentLoaded", async () => {
     const user_id = getLocalStorage('currentUserId');
     if (user_id) {
