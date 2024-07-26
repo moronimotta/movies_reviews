@@ -62,12 +62,13 @@ export default class Reviews {
 
     async addReview(data) {
         await this.getAllReviews();
-        this.allReviews.push(data);
         const userReview = this.allReviews.find(review => review.external_id === data.external_id && review.user_id === data.user_id);
         if (userReview) {
             alert('You have already reviewed this movie!');
             return location.reload();
         }
+        
+        this.allReviews.push(data);
         try {
             const response = await fetch('/reviews/add', {
                 method: 'POST',

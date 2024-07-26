@@ -47,10 +47,13 @@ submitChanges.addEventListener('click', async () => {
         location.reload();
     }
 
-    const lists = document.querySelectorAll('input[name="list"]:checked');
+    // get the checked radio button
     const classList = new List(user.id);
+    const lists = document.querySelectorAll('input[name="list"]');
     lists.forEach(list => {
-        classList.addMovieToList(list.value, details.movie);
+        if (list.checked) {
+            classList.addMovieToList(list.value, details.movie);
+        }
     });
 
     window.location.reload();

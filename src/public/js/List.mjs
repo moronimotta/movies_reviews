@@ -131,7 +131,7 @@ export default class List {
                     const listDiv = document.createElement('div');
                     listDiv.className = 'form-check';
                     listDiv.innerHTML = `
-                    <input class="form-check-input" type="checkbox" name="list" id="list${list.list_id}" value="${list.list_id}">
+                    <input class="form-check-input" type="radio" name="list" id="list${list.list_id}" value="${list.list_id}">
                     <label class="form-check-label" for="list${list.list_id}">
                         ${list.list_name}
                     </label>
