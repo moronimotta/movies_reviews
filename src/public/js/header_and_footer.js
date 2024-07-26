@@ -11,7 +11,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
     getRandomQuote();
 
-    const footer = document.getElementsByName('footer')[0];
-    footer.innerHTML = '<p>&copy; 2024 Movie Reviews. All rights reserved.</p>';
+    const footer = document.getElementById('footer');
+    const p = document.createElement('p');
+    p.textContent = '© 2024 Movie Reviews. All rights reserved.';
+    footer.appendChild(p);
 
 });
