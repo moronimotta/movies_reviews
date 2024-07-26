@@ -1,1 +1,50 @@
-{"lists":[{"list_id":1,"user_id":2,"list_name":"bAO demais","movies":[{"id":974262,"title":"Descendants: The Rise of Red","poster_path":"/8fYluTtB3b3HKO7KQa5tzrvGaps.jpg"},{"id":974262,"title":"Descendants: The Rise of Red","poster_path":"/8fYluTtB3b3HKO7KQa5tzrvGaps.jpg"},{"id":974262,"title":"Descendants: The Rise of Red","poster_path":"/8fYluTtB3b3HKO7KQa5tzrvGaps.jpg"},{"id":974262,"title":"Descendants: The Rise of Red","poster_path":"/8fYluTtB3b3HKO7KQa5tzrvGaps.jpg"},{"id":974262,"title":"Descendants: The Rise of Red","poster_path":"/8fYluTtB3b3HKO7KQa5tzrvGaps.jpg"},{"id":974262,"title":"Descendants: The Rise of Red","poster_path":"/8fYluTtB3b3HKO7KQa5tzrvGaps.jpg"},{"id":974262,"title":"Descendants: The Rise of Red","poster_path":"/8fYluTtB3b3HKO7KQa5tzrvGaps.jpg"},{"id":974262,"title":"Descendants: The Rise of Red","poster_path":"/8fYluTtB3b3HKO7KQa5tzrvGaps.jpg"},{"id":573435,"title":"Bad Boys: Ride or Die","poster_path":"/nP6RliHjxsz4irTKsxe8FRhKZYl.jpg"}]},{"list_id":2,"user_id":1,"list_name":"Filmes daora","movies":[{"id":974262,"title":"Descendants: The Rise of Red","poster_path":"/8fYluTtB3b3HKO7KQa5tzrvGaps.jpg"},{"id":974262,"title":"Descendants: The Rise of Red","poster_path":"/8fYluTtB3b3HKO7KQa5tzrvGaps.jpg"}]},{"user_id":2,"list_id":3,"list_name":"test","movies":[{"id":573435,"title":"Bad Boys: Ride or Die","poster_path":"/nP6RliHjxsz4irTKsxe8FRhKZYl.jpg"}]}]}
+{
+  "lists": [
+    {
+      "list_id": 1,
+      "user_id": 2,
+      "list_name": "List 1",
+      "movies": [
+        {
+          "id": 974262,
+          "title": "Descendants: The Rise of Red",
+          "poster_path": "/8fYluTtB3b3HKO7KQa5tzrvGaps.jpg"
+        },
+        {
+          "id": 573435,
+          "title": "Bad Boys: Ride or Die",
+          "poster_path": "/nP6RliHjxsz4irTKsxe8FRhKZYl.jpg"
+        }
+      ]
+    },
+    {
+      "list_id": 2,
+      "user_id": 1,
+      "list_name": "Filmes daora",
+      "movies": [
+        {
+          "id": 974262,
+          "title": "Descendants: The Rise of Red",
+          "poster_path": "/8fYluTtB3b3HKO7KQa5tzrvGaps.jpg"
+        },
+        {
+          "id": 974262,
+          "title": "Descendants: The Rise of Red",
+          "poster_path": "/8fYluTtB3b3HKO7KQa5tzrvGaps.jpg"
+        }
+      ]
+    },
+    {
+      "user_id": 2,
+      "list_id": 3,
+      "list_name": "List 2",
+      "movies": [
+        {
+          "id": 573435,
+          "title": "Bad Boys: Ride or Die",
+          "poster_path": "/nP6RliHjxsz4irTKsxe8FRhKZYl.jpg"
+        }
+      ]
+    }
+  ]
+}

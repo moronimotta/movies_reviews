@@ -8,16 +8,18 @@
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
     <script src="/js/movie_details.js" type="module"></script>
+    <script src="/js/header_and_footer.js" type="module"></script>
+
 
 </head>
 
 <body>
     <header>
         <div class="logo">
-            <a href="./../index.html">LOGO</a>
+            <a href="/">Movies Review</a>
         </div>
-                <div class="account">
-            <a href="/user/account">Account</a>
+
+        <div id="userAccBtn" class="account">
         </div>
     </header>
 
@@ -34,23 +36,23 @@
     </nav>
 
     <main>
+        <h1 id="movie-name">Movie Name: </h1>
         <section class="movie-details">
-            <h1 id="movie-name">Movie Name: </h1>
-            <div id="movie-poster">
+            <div id="movie-poster"> </div>
+            <div id="movie-info-details">
                 <p id="description">Description/Info: </p>
                 <p id="likes">Likes: </p>
-
-
-        </section>
-        <section id="actions">
-            <button id="new-review" type="button" class="btn btn-primary" data-bs-toggle="modal"
-                data-bs-target="#reviewModal">
-                Submit Review
-            </button>
-            <button id="add-to-list" type="button" class="btn btn-secondary" data-bs-toggle="modal"
-                data-bs-target="#listModal">
-                Add to List
-            </button>
+                <section id="actions">
+                    <button id="new-review" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#reviewModal">
+                        Submit Review
+                    </button>
+                    <button id="add-to-list" type="button" class="btn btn-warning" data-bs-toggle="modal"
+                        data-bs-target="#listModal">
+                        Add to List
+                    </button>
+                </section>
+            </div>
         </section>
         <section id="reviews">
             <h1>Reviews: </h1>
@@ -61,7 +63,7 @@
 
 
         <!-- Modal Review -->
-        <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+        <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true" data-bs-theme="dark">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -93,7 +95,7 @@
         </div>
 
         <!-- Modal Add to List -->
-        <div class="modal fade" id="listModal" tabindex="-1" aria-labelledby="addToListModalLabel" aria-hidden="true">
+        <div class="modal fade" id="listModal" tabindex="-1" aria-labelledby="addToListModalLabel" aria-hidden="true" data-bs-theme="dark">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -106,7 +108,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button id="submit-list" type="button" class="btn btn-primary">Add to List</button>
+                        <button id="submit-list" type="button" class="btn btn-warning">Add</button>
                         <button id="create-list" type="button" class="btn btn-primary" data-bs-toggle="modal"
                             data-bs-target="#createNewList">Create List</button>
                     </div>
@@ -115,7 +117,7 @@
         </div>
 
         <div class="modal fade" id="createNewList" tabindex="-1" aria-labelledby="addToListModalLabel"
-            aria-hidden="true">
+            aria-hidden="true" data-bs-theme="dark">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -142,7 +144,7 @@
 
     </main>
 
-    <footer>Footer</footer>
+    <footer></footer>
 
     <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
 

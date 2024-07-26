@@ -6,7 +6,6 @@ const fs = require("fs");
 const path = require("path");
 const bodyParser = require('body-parser');
 
-
 const server = http.createServer(app);
 const port = process.env.PORT || 3000;
 require("dotenv").config();
@@ -39,27 +38,27 @@ app.get("/movies/list", (req, res) => {
 
 app.post('/movies/list/add', (req, res) => {
   const body = req.body
- 
-    fs.writeFile("../src/public/json/lists.json", JSON.stringify(body), (err) => {
-      if (err) {
-        console.log(err);
-      }
-      res.status(200).json({ message: "Movie added successfully" });
+
+  fs.writeFile("../src/public/json/lists.json", JSON.stringify(body), (err) => {
+    if (err) {
+      console.log(err);
     }
-    );
+    res.status(200).json({ message: "Movie added successfully" });
   }
+  );
+}
 );
 app.post('/movies/list/create', (req, res) => {
   const body = req.body
- 
-    fs.writeFile("../src/public/json/lists.json", JSON.stringify(body), (err) => {
-      if (err) {
-        console.log(err);
-      }
-      res.status(200).json({ message: "Movie added successfully" });
+
+  fs.writeFile("../src/public/json/lists.json", JSON.stringify(body), (err) => {
+    if (err) {
+      console.log(err);
     }
-    );
+    res.status(200).json({ message: "Movie added successfully" });
   }
+  );
+}
 );
 
 
@@ -104,6 +103,12 @@ app.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, "../src/account/login.html"));
 }
 );
+
+app.get('/logout', (req, res) => {
+  res.redirect('/?logout=true');
+}
+);
+
 
 app.get('/movies/popular', (req, res) => {
   res.sendFile(path.join(__dirname, "../src/movies/popular.html"));

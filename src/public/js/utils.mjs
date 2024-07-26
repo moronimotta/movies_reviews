@@ -12,6 +12,37 @@ export function setLocalStorage(key, data) {
   localStorage.setItem(key, JSON.stringify(data));
 }
 
+export function deleteLocalStorage(key) {
+  localStorage.removeItem(key);
+}
+
+export function createLoginButton() {
+  const loginButton = document.createElement('a');
+  loginButton.id = 'accBtn1';
+  loginButton.href = '/login';
+  loginButton.innerText = 'Login/Register';
+  document.getElementById('userAccBtn').appendChild(loginButton);
+}
+
+export function createAccountActionsButton() {
+  const logoutButton = document.createElement('a');
+  logoutButton.id = 'accBtn2';
+  logoutButton.href = '/logout';
+  logoutButton.innerText = 'Logout';
+  logoutButton.classList.add('action-button');
+
+  const accountButton = document.createElement('a');
+  accountButton.id = 'accBtn';
+  accountButton.href = '/user/account';
+  accountButton.innerText = 'Account';
+  accountButton.classList.add('action-button');
+
+  const buttonContainer = document.getElementById('userAccBtn');
+  buttonContainer.appendChild(logoutButton);
+  buttonContainer.appendChild(accountButton);
+}
+
+
 export function getParam(param) {
   const params = new URLSearchParams(window.location.search);
   return params.get(param);

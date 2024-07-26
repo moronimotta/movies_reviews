@@ -93,40 +93,6 @@ export default class Reviews {
         }
     }
 
-    async deleteReview(reviewId) {
-        const reviewIndex = this.reviews.findIndex(review => review.id === reviewId);
-        if (reviewIndex !== -1) {
-            return this.reviews.splice(reviewIndex, 1);
-        }
-
-        try {
-            const response = await fetch('/reviews/delete', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(this.reviews)
-            });
-
-            if (response.ok) {
-                alert('Review added successfully!');
-            }
-            else {
-                const errorData = await response.json();
-                alert(`Error: ${errorData.message}`);
-            }
-
-        }
-
-        catch (error) {
-            console.log('Error:', error);
-            alert('An unexpected error occurred.');
-        }
-
-
-
-    }
-
     getAllReviewsByMovieId() {
         fetch('../json/reviews.json')
             .then(response => response.json())

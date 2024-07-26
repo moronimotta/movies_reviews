@@ -1,53 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Reviews - Sign In</title>
     <link rel="stylesheet" href="../css/style.css">
     <script src="/js/login.js" type="module"></script>
+    <script src="/js/header_and_footer.js" type="module"></script>
+
 
 </head>
+
 <body>
     <header>
-        <div class="account">
-            <a href="/">LOGO</a>
+        <div class="logo">
+            <a href="/">Movies Review</a>
         </div>
-                <div class="account">
-            <a href="/user/account">Account</a>
+        <div id="userAccBtn" class="account">
         </div>
     </header>
-    
-    <nav>
-        <ul>
-            <li>
-                <a href="/movies/popular">Popular</a>
-            </li>
-            <li>
-                <a href="/">Upcoming Movies</a>
-            </li>
-            
-        </ul>
-    </nav>
-    
+
     <main>
         <section class="sign-in">
             <h1>Sign In</h1>
             <form id="loginForm">
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="example@gmail.com">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="example@gmail.com" required>
+                </div>
 
-                
-                <label for="password">Password</label>
-                <input type="password" id="password" placeholder="********">
-                
-                <button type="submit">Sign In</button>
-                
-                <a href="/account/create">New User? SIGN UP</a>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="********" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Sign In</button>
+
+                <p class="signup-link">
+                    <a href="/account/create">New User? SIGN UP</a>
+                </p>
             </form>
         </section>
+
     </main>
-    
-    <footer>Footer</footer>
+
+    <footer></footer>
 </body>
+
 </html>

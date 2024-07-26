@@ -6,19 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Reviews - Account</title>
     <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/header_and_footer.js" type="module"></script>
+
 </head>
 <script src="/js/account_page.js" type="module"></script>
 <script src="/js/searchbar.js" type="module"></script>
 
 <body>
     <header>
-        <div class="account">
-            <a href="/">LOGO</a>
+        <div class="logo">
+            <a href="/">Movies Review</a>
         </div>
-        <div class="account">
-            <a href="/user/account">Account</a>
+        <div id="userAccBtn" class="account">
         </div>
-        
+
     </header>
 
     <nav>
@@ -33,9 +34,15 @@
     </nav>
 
     <main>
-        <section id="user-info"></section>
+        <section class="user-info-card">
+            <h2>User Information</h2>
+            <div id="user-info" class="user-details">
+
+            </div>
+        </section>
+    
         <section id="lists"></section>
         <section id="reviews"></section>
     </main>
 
-    <footer>Footer</footer>
+    <footer></footer>

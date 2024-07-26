@@ -1,12 +1,16 @@
 :root {
   --font-body: 'Raleway', Arial, Helvetica, sans-serif;
-  --font-headline: 'Pacifico', Haettenschweiler, "Arial Narrow Bold", sans-serif;
+
+  --font-headline: 'Graphik-Regular-Web', Arial, Helvetica, sans-serif;
   /* colors */
-  --primary-color: #CAE7B9;
-  --secondary-color: #F3DE8A;
-  --tertiary-color: #EB9486;
-  --light-grey: #7E7F9A;
+  --primary-color: #ff8000;
+  --secondary-color: #00e054;
+  --tertiary-color: #40bcf4;
+
   --dark-grey: #97A7B3;
+  
+  --light-grey: #1c1e20;
+  --dark: #14181c;
 
   /* sizes */
   --font-base: 18px;
@@ -19,7 +23,7 @@ body {
     font-size: var(--font-base);
     margin: 0;
     padding: 0;
-    /* background-color: var(--light-grey); */
+    background-color: var(--dark);
 }
 
 header {
@@ -27,8 +31,31 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1em;
-    /* background-color: var(--primary-color); */
+    background-color: var(--light-grey);
     color: var(--dark-grey);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+a {
+    color: var(--dark-grey);
+    text-decoration: none;
+}
+#accBtn2:hover {
+    color: var(--tertiary-color);
+}
+.action-button {
+    margin-right: 10px; 
+  }
+  
+  #userAccBtn {
+    display: flex;
+    align-items: center;
+  }
+  
+
+
+a:hover {
+    color: var(--primary-color);
 }
 
 header .logo {
@@ -53,6 +80,7 @@ nav ul {
     /* background-color: var(--secondary-color); */
 }
 
+
 nav ul li {
     padding: 1em;
     cursor: pointer;
@@ -61,24 +89,38 @@ nav ul li {
 
 main {
     padding: 1em;
-    /* background-color: var(--light-grey); */
     color: var(--dark-grey);
 }
 
 footer {
-    padding: 1em;
     text-align: center;
-    /* background-color: var(--secondary-color); */
+    background-color: var(--light-grey);
     color: var(--dark-grey);
     position: fixed;
     width: 100%;
     bottom: 0;
 }
 
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.01);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 .random-quote {
     text-align: center;
     margin: 1em 0;
     font-family: var(--font-headline);
+    border: 0.5px solid var(--secondary-color); 
+    padding: 1em; 
+    border-radius: 5px;
+    animation: pulse 3s infinite; 
 }
 
 .popular-movies .slideshow {
@@ -117,10 +159,26 @@ form button {
     cursor: pointer;
 }
 
+#reviews div{
+    background-color: var(--light-grey);
+    /* border: 1px solid var(--primary-color); */
+
+}
+
 form a {
     text-decoration: none;
     color: var(--dark-grey);
     text-align: center;
+}
+.movie-details {
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: center;
+}
+
+#movie-info-details{
+    margin: 12px;
 }
 
 #movie-container {
@@ -131,7 +189,7 @@ form a {
 }
 
 .movie-card {
-    border: 1px solid #ccc;
+    border: 2px solid var(--tertiary-color);
     border-radius: 10px;
     overflow: hidden;
     width: 158px; 
@@ -209,5 +267,46 @@ form a {
 }
 
 .review-feedback a:hover {
+    text-decoration: underline;
+}
+
+.sign-in {
+    width: 100%;
+    max-width: 400px;
+    margin: 3em auto;
+    padding: 2em;
+    background-color: var(--light-grey);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.sign-in h1 {
+    font-family: var(--font-headline);
+    font-size: var(--large-font);
+    margin-bottom: 1em;
+    color: var(--primary-color);
+}
+
+.sign-in button {
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 1.5em;
+    text-align: left;
+}
+
+.signup-link {
+    margin-top: 1em;
+}
+
+.signup-link a {
+    color: var(--tertiary-color);
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    color: var(--secondary-color);
     text-decoration: underline;
 }
